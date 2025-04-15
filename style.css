@@ -1,0 +1,146 @@
+@font-face {
+    font-family: 'TheStrongGamer';
+    src: url('x8y12pxTheStrongGamer.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'GridGazer';
+    src: url('x16y32pxGridGazer.ttf') format('truetype');
+}
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'TheStrongGamer', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    image-rendering: pixelated; /* Maintain pixelated look */
+    font-smooth: never; /* Disable anti-aliasing */
+    -webkit-font-smoothing: none; /* Disable anti-aliasing for WebKit */
+}
+
+.card {
+    width: 1254px;
+    height: 758px;
+    border: 4px solid #00FF7F; /* Emerald green border */
+    background-color: #000000;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Hide overflow to ensure it fits */
+    position: relative; /* Needed for absolute positioning of the footer */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Reduced margin */
+    border-bottom: 3px solid #00FF7F; /* Slightly thinner border */
+    padding-bottom: 10px; /* Reduced padding */
+    width: 100%;
+    justify-content: center;
+}
+
+.github-icon {
+    font-size: 48px; /* Adjust size as needed */
+    color: #00FF7F; /* Emerald green icon */
+    margin-right: 20px;
+}
+
+h1 {
+    font-size: 32px; /* Reduced font size */
+    margin: 0;
+    color: #00FF7F; /* Emerald green title */
+    text-shadow: 2px 2px #000000;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 15px; /* Reduced gap */
+    width: 95%; /* Slightly reduced width */
+    padding: 10px; /* Reduced padding */
+    box-sizing: border-box;
+    margin-bottom: 15px; /* Added margin below grid */
+}
+
+.grid-item {
+    border: 2px solid #FFFFFF; /* White border for each item */
+    padding: 10px; /* Reduced padding */
+    background-color: #1a1a1a; /* Slightly lighter black background */
+    text-align: left;
+}
+
+.command {
+    display: block;
+    font-family: 'GridGazer', sans-serif; /* Use GridGazer font for commands */
+    font-size: 20px; /* Reduced font size */
+    color: #00FF7F; /* Emerald green command text */
+    margin-bottom: 5px; /* Reduced margin */
+    text-shadow: 1px 1px #000000;
+}
+
+.description {
+    display: block;
+    font-family: 'TheStrongGamer', sans-serif; /* Use TheStrongGamer font for descriptions */
+    font-size: 16px; /* Reduced font size */
+    color: #FFFFFF; /* White description text */
+}
+
+/* Git Flow Diagram Styles */
+.git-flow-diagram {
+    margin-top: 25px; /* Add margin back for title space */
+    width: 90%; /* Increased width relative to container */
+    position: relative; /* Add position relative back */
+    border: 2px solid #00FF7F; /* Emerald green border for the diagram section */
+    padding: 25px 10px 20px 10px; /* Increased bottom padding */
+    background-color: #000000; /* Black background */
+    text-align: center; /* Center the flow content */
+}
+
+.git-flow-diagram h2 {
+    position: absolute; /* Re-apply absolute positioning */
+    top: -11px; /* Slightly adjust vertical position */
+    left: 15px; /* Position from the left */
+    background-color: #000000; /* Match card background */
+    padding: 0 8px; /* Horizontal padding */
+    font-size: 20px; /* Reduced font size */
+    color: #00FF7F; /* Emerald green title */
+    margin: 0; /* Reset margin */
+    text-shadow: 1px 1px #000;
+    font-family: 'TheStrongGamer', sans-serif; /* Ensure title uses the correct font */
+}
+
+.flow-area {
+    border: 1px dashed #FFFFFF; /* Thinner border */
+    padding: 8px 10px; /* Slightly increased vertical padding */
+    margin: 8px auto; /* Increased vertical margin, center the areas */
+    background-color: #222; /* Darker background for areas */
+    width: 70%; /* Adjusted width */
+    font-family: 'GridGazer', sans-serif; /* Use GridGazer for area names */
+    font-size: 16px; /* Reduced font size */
+}
+
+.flow-arrow {
+    font-size: 16px; /* Reduced font size */
+    color: #00FF7F; /* Emerald green arrow text */
+    margin: 6px 0; /* Increased vertical margin */
+    font-family: 'GridGazer', sans-serif; /* Use GridGazer for arrow text */
+}
+
+/* Footer Styles */
+.footer {
+    position: absolute;
+    bottom: 15px; /* Position at the bottom */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'TheStrongGamer', sans-serif; /* Use TheStrongGamer font */
+    font-size: 14px; /* Adjust size as needed */
+    color: #AAAAAA; /* Subtle gray color */
+}
