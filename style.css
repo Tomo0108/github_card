@@ -24,9 +24,9 @@ body {
 .card {
     width: 100%;
     height: 100%;
-    border: 3px solid #8CC63F;
+    border: none;
     background-color: #000000;
-    padding: 24px 20px;
+    padding: 24px 40px 32px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -36,90 +36,174 @@ body {
     justify-content: space-between;
 }
 
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 6px solid #D4B55F;
+    box-shadow: inset 0 0 0 2px #000000, inset 0 0 0 4px #D4B55F;
+    pointer-events: none;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    border: 2px solid rgba(212, 181, 95, 0.4);
+    pointer-events: none;
+}
+
+
 .header {
     display: flex;
     align-items: center;
-    margin-bottom: 24px;
-    border-bottom: 3px solid #8CC63F;
-    padding-bottom: 12px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #D4B55F;
+    padding-bottom: 10px;
     width: 100%;
     justify-content: center;
 }
 
 .github-icon {
-    font-size: 36px;
-    color: #8CC63F;
-    margin-right: 10px;
+    font-size: 42px;
+    color: #D4B55F;
+    margin-right: 12px;
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 42px;
     margin: 0;
-    color: #8CC63F;
+    color: #D4B55F;
     text-shadow: 2px 2px #000000;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 24px;
     width: 100%;
-    max-width: 1100px;
-    padding: 0 12px 20px;
+    max-width: 1000px;
+    padding: 8px 0 36px;
     box-sizing: border-box;
     margin: auto;
     flex: 1;
 }
 
 .grid-item {
-    border: 2px solid #FFFFFF;
-    padding: 16px;
+    border: 2px solid #D4B55F;
+    padding: 16px 24px 16px 20px;
     background-color: #1a1a1a;
     text-align: left;
-    box-shadow: 0 0 12px rgba(140, 198, 63, 0.2);
-    transition: all 0.2s ease;
+    box-shadow: 0 0 12px rgba(212, 181, 95, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.grid-item::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.grid-item:hover {
+    box-shadow: 0 0 20px rgba(212, 181, 95, 0.3);
+    transform: translateY(-1px);
+}
+
+.grid-item:hover::before {
+    border-color: rgba(212, 181, 95, 0.6);
+}
+
+.command-content {
+    flex: 1;
 }
 
 .command {
     display: block;
     font-family: 'GridGazer', sans-serif;
-    font-size: 32px;
-    color: #8CC63F;
-    margin-bottom: 12px;
+    font-size: 39.5px;
+    color: #D4B55F;
+    margin-bottom: 8px;
     text-shadow: 2px 2px #000000;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
+}
+
+/* 特定のコマンドのフォントサイズ調整 */
+.grid-item:nth-child(2) .command {
+    font-size: 39.5px;
+    letter-spacing: 0.1px;
+}
+
+.grid-item:nth-child(5) .command {
+    font-size: 39.5px;
+}
+
+.grid-item:nth-child(1) .command {
+    letter-spacing: 0.25px;
+}
+
+.grid-item:nth-child(3) .command,
+.grid-item:nth-child(4) .command,
+.grid-item:nth-child(6) .command {
+    font-size: 39.5px;
+    letter-spacing: 0.3px;
 }
 
 .description {
     display: block;
     font-family: 'TheStrongGamer', sans-serif;
-    font-size: 22px;
+    font-size: 30px;
     color: #FFFFFF;
-    line-height: 1.4;
+    line-height: 1.1;
+    margin: 0;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.command-content {
+    flex: 1;
+    min-width: 0;
+    padding-right: 8px;
 }
 
 .command-illustration {
-    margin-top: 16px;
     padding: 12px;
-    background-color: #222222;
-    border: 1px solid rgba(140, 198, 63, 0.3);
+    background-color: #1C1810;
+    border: 1px solid rgba(212, 181, 95, 0.3);
     border-radius: 6px;
-    text-align: center;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 14px;
+    min-width: 64px;
+    flex-shrink: 0;
 }
 
 .command-illustration i {
     font-size: 32px;
-    color: #8CC63F;
-    margin: 6px;
+    color: #D4B55F;
 }
 
 .arrow-icon {
     color: #FFFFFF;
-    margin: 0 12px;
+    margin: 4px 0;
     font-size: 24px;
+    transform: rotate(90deg);
+    opacity: 0.8;
 }
 
 
@@ -131,11 +215,11 @@ h1 {
 
 .footer {
     position: absolute;
-    bottom: 16px;
-    left: 0;
-    width: 100%;
-    text-align: center;
+    bottom: 28px;
+    right: 32px;
+    text-align: right;
     font-family: 'ScanLine', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     color: #FFFFFF;
+    letter-spacing: 1px;
 }
